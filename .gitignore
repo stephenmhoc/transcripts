@@ -1,0 +1,20 @@
+.venv/
+.env
+.env.*
+!.env.example
+data/
+var/
+*.sqlite3*
+*.db
+__pycache__/
+.pytest_cache/
+*.egg-info/
+.DS_Store
+
+# Local-only notes and homelab config, never published
+local/
+
+# Never commit exports or key material
+*.opml
+*.pem
+*.key

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "transcripts": {
+      "type": "http",
+      "url": "https://transcripts.merimerimeri.com/mcp",
+      "headers": {"Authorization": "Bearer ${TRANSCRIPTS_MCP_TOKEN}"}
+    }
+  }
+}

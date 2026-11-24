@@ -1,0 +1,8 @@
+# Default gitleaks rules plus allowlists for known-fake test fixtures.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Fake Overcast QR token used in tests"
+paths = ['''^tests/''']
+regexes = ['''abcd-efgh_ijklmn1234''']

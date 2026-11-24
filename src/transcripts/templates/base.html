@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>{% block title %}Transcripts{% endblock %} · A listening library</title><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script></head>
+<body>
+{% if demo %}<div class="demo-banner">DEMO LIBRARY · FICTIONAL SHOWS & SAMPLE TRANSCRIPTS · SEPARATE FROM YOUR PERSONAL DATA</div>{% endif %}
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="sidebar">
+<a class="brand" href="/" aria-label="Transcripts home"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 13v6M10 8v16M16 3v26M22 8v16M28 13v6"/></svg><span>transcripts<span class="brand-dot">.</span></span></a>
+<p class="brand-caption">A PERSONAL LISTENING LIBRARY</p>
+<nav aria-label="Main navigation"><a {% if active=='library' %}aria-current="page"{% endif %} href="/"><span class="nav-icon">▤</span> Library</a><a {% if active=='pipeline' %}aria-current="page"{% endif %} href="/pipeline"><span class="nav-icon">↳</span> Pipeline</a><a {% if active=='connections' %}aria-current="page"{% endif %} href="/connections"><span class="nav-icon">⌘</span> Connections</a></nav>
+<div class="sidebar-note"><span class="small-label">HEARD, THEN KEPT.</span><p>A quieter home for the things<br>you want to remember.</p></div>
+<div class="private-label"><span class="dot"></span> Private library <span class="lock">⌑</span></div>
+<form action="/logout" method="post" class="logout"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="text-button" type="submit">Sign out ↗</button></form>
+</aside>
+<div class="workspace"><header class="topbar"><span>THE PERSONAL ARCHIVE</span><span>LOCAL TRANSCRIPTION <span class="dot"></span></span></header>
+<main id="main">
+{% if notice %}<div class="notice" role="status">{{ notice }}</div>{% endif %}
+{% block content %}{% endblock %}
+</main><footer class="footer"><span>Collected with intention. Transcribed locally.</span><span>YOUR WORDS TO FIND, AGAIN.</span></footer></div>
+</div></body></html>

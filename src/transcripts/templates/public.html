@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><title>{{ title }} · {{ podcast }}</title><link rel="stylesheet" href="/p/public.css"></head>
+<body><main>
+<p class="podcast">{{ podcast }}</p>
+<h1>{{ title }}</h1>
+<p class="meta">{% if published %}<span>{{ published|date_label }}</span>{% endif %}{% if link %}<a href="{{ link }}" rel="noopener noreferrer">Listen to the episode ↗</a>{% endif %}<span>Machine transcript</span></p>
+<article class="transcript">{% for segment in segments %}<section class="segment" id="{{ segment.anchor }}">{% for minute in segment.minutes %}<span class="minute" id="{{ minute }}"></span>{% endfor %}<a href="#{{ segment.anchor }}" title="Link to this moment">{{ segment.start|timestamp }}</a><p>{{ segment.text }}</p></section>{% endfor %}</article>
+</main></body></html>
